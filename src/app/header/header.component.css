@@ -1,0 +1,9 @@
+#header #logo {
+  width: 100%;
+  max-width: 240px;
+}
+
+#header .navbar-toggler {
+  padding: 0;
+  border: none;
+}
