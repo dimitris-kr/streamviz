@@ -2,21 +2,23 @@
   <div class="container-xxl d-flex flex-row flex-wrap align-items-center">
     <div class="d-flex flex-row flex-wrap justify-content-start p-2 col-9 col-md-3">
       <div id="logo">
-        <img src="assets/logo.png" alt="streamviz logo" class="img-fluid">
+        <a routerLink="/">
+          <img src="assets/logo.png" alt="streamviz logo" class="img-fluid">
+        </a>
       </div>
     </div>
     <div class="d-flex flex-row flex-wrap justify-content-end p-2 col-3 col-md-9">
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-md">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">About</a>
-            <a class="nav-link" href="#">Visualization</a>
-            <a class="nav-link">Credits</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+            <a class="nav-link" routerLink="/visualization" routerLinkActive="active">Visualization</a>
+            <a class="nav-link" routerLink="/credits" routerLinkActive="active">Credits</a>
           </div>
         </div>
       </nav>

@@ -1,0 +1,11 @@
+#not-found{
+  min-height: 54vh;
+}
+
+#not-found .num{
+  font-size: calc(2.5rem + .6vw);
+}
+
+#not-found .gif{
+  max-width: 240px;
+}

@@ -1,0 +1,24 @@
+<footer id="footer">
+  <div class="container-xxl d-flex flex-column align-items-center py-5">
+    <div class="d-flex flex-wrap justify-content-center align-items-center p-2">
+      <div id="logo">
+        <a routerLink="/">
+        <img src="assets/logo.png" alt="streamviz logo" class="img-fluid">
+        </a>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center p-2">
+      <nav class="navbar navbar-expand-sm">
+        <div class="navbar-nav">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+          <a class="nav-link" routerLink="/visualization" routerLinkActive="active">Visualization</a>
+          <a class="nav-link" routerLink="/credits" routerLinkActive="active">Credits</a>
+        </div>
+      </nav>
+    </div>
+    <div class="d-flex justify-content-center p-4 mt-4 border-top text-center text-muted border-dark-subtle copyright">
+      2023 / Filippos Klados, Dimitrios Krikonis, Georgios Veryvakis / StreamViz: Streaming Platforms & User Preference / Group Project / Data Visualization Course / DIT / NKUA
+    </div>
+  </div>
+</footer>

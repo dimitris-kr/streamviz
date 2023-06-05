@@ -1,1 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* IMPORT GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/***********/
+
+/* GLOBAL VARIABLES */
+
+:root {
+  /* Colors */
+  --slateBlue: #7363d4;
+  --tropicalIndigo: #887FDA;
+  --lavenderWeb: #D6DBE5;
+  --frenchGray: #CED4DE;
+  --eerieBlack: #333338;
+  --spaceCadet: #141B41;
+
+  /* Fonts */
+  --fancy: 'Playfair Display', serif;
+  --simple: 'Quicksand', sans-serif;
+
+  /* Site Width */
+  --width: 100%;
+  --maxWidth: 1200px;
+}
+
+/***********/
+
+/* BASICS */
+
+body {
+  background-color: var(--lavenderWeb);
+  color: var(--eerieBlack);
+  margin: 0;
+  font-family: var(--simple);
+}
+
+* {
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+h1, h2, h3{
+  font-family: var(--fancy);
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+h1{
+  font-size: 48px;
+}
+
+h2{
+  font-size: 38px;
+}
+
+h3{
+  font-size: 28px;
+}
+
+h4{
+  font-size: 18px;
+}
+
+/* NAV */
+
+.nav-link{
+  text-align: center;
+  position: relative;
+  margin: 0 0.2rem;
+}
+
+.nav-link:hover,
+.nav-link.hover{
+  color: var(--slateBlue);
+}
+
+.nav-link::after {
+  content: '';
+  width: 100%;
+  display: block;
+  position: absolute;
+  height: 1.1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--slateBlue);
+  transform-origin: right bottom;
+  transform: scale(0);
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+  transform: scale(1);
+}
+
+/* BUTTONS */
+
+.btn-primary {
+  background-color: var(--slateBlue);
+  border-color: var(--slateBlue);
+}
+
+.btn-primary:hover {
+  background-color: var(--tropicalIndigo);
+  border-color: var(--tropicalIndigo);
+}

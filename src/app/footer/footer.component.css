@@ -1,0 +1,12 @@
+#footer {
+  background-color: var(--frenchGray);
+}
+
+#footer #logo {
+  width: 100%;
+  max-width: 280px;
+}
+
+#footer .copyright {
+  font-size: 0.8rem;
+}

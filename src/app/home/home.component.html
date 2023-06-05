@@ -1,0 +1,42 @@
+<div id="home">
+
+  <div class="container-fluid p-0 position-relative">
+    <ngb-carousel class="carousel-fade">
+      <ng-template ngbSlide *ngFor="let banner of banners">
+        <div class="position-relative slide-img">
+          <img [src]="banner" alt="slide" class="img-fluid"/>
+          <div class="position-absolute w-100 h-100 top-0 overlay"></div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <div
+      class="position-absolute h-100 top-0 container-xxl d-flex flex-column justify-content-center align-items-center z-1 text-center carousel-content">
+      <h1>StreamViz</h1>
+      <h3>Streaming Platforms & User Preference</h3>
+      <p class="desc">Here you'll find interactive data visualizations that analyse and compare the content (movies &
+        tv), subscribers and revenue of the most popular streaming platforms today!</p>
+    </div>
+  </div>
+
+  <div class="container-xxl px-2 py-5 text-center idea">
+    <h2>The Idea</h2>
+    <p>
+      The streaming era has revolutionized the way people access movies, series etc. as well as the way the
+      entertainment business works. This project proposes a data visualization concerning the content, revenue,
+      and subscribers of various streaming platforms, to acquire knowledge regarding the differences in what
+      they offer, possible trends, and what the users gravitate towards.
+    </p>
+  </div>
+
+  <div class="container-xxl px-2 py-5 text-center">
+    <h2>Tableau Viz TEST</h2>
+
+    <app-tableau-viz
+      dashboardIndex="viz1"
+      vizUrl="https://public.tableau.com/views/WorldEmploymentRatesMinimumWagein2020/WorldEmploymentRatesMinimumWagein2020?:language=en-GB&:display_count=n&:origin=viz_share_link">
+    </app-tableau-viz>
+
+  </div>
+
+</div>
