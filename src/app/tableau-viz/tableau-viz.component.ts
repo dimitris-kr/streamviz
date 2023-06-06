@@ -28,4 +28,8 @@ export class TableauVizComponent {
     this.calculateDashboardSize();
   }
 
+  ngOnInit(): void {
+    this.calculateDashboardSize();
+  }
+
 }
