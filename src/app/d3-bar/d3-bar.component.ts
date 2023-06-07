@@ -9,56 +9,80 @@ import {HttpClient} from '@angular/common/http';
 })
 export class D3BarComponent {
 
-  private data: Data[] = [];
+  private data: any[] = [];
   private svg: any;
-  private margin = 10;
-  private width = 800 - (this.margin * 2);
-  private height = 500 - (this.margin * 2);
+  private margin = {x: 40, y: 100};
+  private width = 1000 - 2 * this.margin.x;
+  private height = 600 - 2 * this.margin.y;
 
   private createSvg(): void {
-    this.svg = d3.select("figure#bar")
+    this.svg = d3.select("#bar")
       .append("svg")
-      .attr("width", this.width + (this.margin * 2))
-      .attr("height", this.height + (this.margin * 2))
+      .attr("width", this.width + 2 * this.margin.x)
+      .attr("height", this.height + 2 * this.margin.y)
+      // .attr("viewBox", [0, 0, this.width, this.height]);
       .append("g")
-      .attr("transform", "translate(" + this.margin + "," + this.margin + ")");
+      .attr("transform", "translate(" + this.margin.x + "," + this.margin.y + ")");
   }
 
-  private drawBars(data: any[]): void {
-    // Create the X-axis band scale
-    const x = d3.scaleBand()
-      .range([0, this.width])
-      .domain(data.map(d => d.country))
-      .padding(0.2);
+  private drawBars(): void {
 
-    // Draw the X-axis on the DOM
-    this.svg.append("g")
-      .attr("transform", "translate(0," + this.height + ")")
-      .call(d3.axisBottom(x))
+    d3.csv("assets/final_demographics_data.csv").then(data => {
+      console.log(data);
+      console.log(data.map(d => d['country']).values());
+      console.log(d3.range(data.length));
+
+      // Create the X-axis band scale
+      const x = d3.scaleBand()
+        .domain(data.map(d => d['country']!))
+        .range([0, this.width])
+        .padding(0.2);
+
+      // Draw the X-axis on the DOM
+      this.svg.append("g")
+        .attr("transform", "translate(0," + this.height + ")")
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+        .attr("transform", "translate(-10,0)rotate(-60)")
+        .style("text-anchor", "end")
+        .style("font-size", "12px");
+
+      // Create the Y-axis band scale
+      const y = d3.scaleLinear()
+        .domain([0, 50])
+        .range([this.height, 0]);
+
+      // Draw the Y-axis on the DOM
+      this.svg.append("g")
+        .call(d3.axisLeft(y))
+        .selectAll("text")
+        .style("font-size", "12px");
+
+      // Create and fill the bars
+      this.svg.selectAll("bars")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", (d: any) => x(d["country"]))
+        .attr("y", (d: any) => y(d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]))
+        .attr("width", x.bandwidth())
+        .attr("height", (d: any) => this.height - y(d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]))
+        .attr("fill", "#d04a35");
+    });
+
+    // Chart Title
+    this.svg.append("text")
+      .text("Unemployment Rates (% of total labor force)")
+      .attr("x", (this.width / 2))
+      .attr("y", 0)
+      .attr("text-anchor", "middle")
       .selectAll("text")
-      .attr("transform", "translate(-10,0)rotate(-45)")
-      .style("text-anchor", "end");
+      .style("font-size", "22px");
 
-    // Create the Y-axis band scale
-    const y = d3.scaleLinear()
-      .domain([0, 100])
-      .range([this.height, 0]);
 
-    // Draw the Y-axis on the DOM
-    this.svg.append("g")
-      .call(d3.axisLeft(y));
 
-    // Create and fill the bars
-    this.svg.selectAll("bars")
-      .data(data)
-      .enter()
-      .append("rect")
-      .attr("x", (d: any) => x(d.country))
-      .attr("y", (d: any) => y(d.unemployment))
-      .attr("width", x.bandwidth())
-      .attr("height", (d: any) => this.height - y(d.unemployment))
-      .attr("fill", "#d04a35");
   }
+/*
 
   private grid(tick: any): void {
     return tick.append("line")
@@ -172,32 +196,36 @@ export class D3BarComponent {
     return svg.node();
 
   }
+*/
+
+  private async loadData(): Promise<void> {
+    this.data = await d3.csv("assets/final_demographics_data.csv").then(data => data);
+  }
 
   constructor(private http: HttpClient) {
-    this.http.get('assets/final_demographics_data.csv', {responseType: 'text'})
-      .subscribe({
-        next: data => {
-          let rows = data.split("\n");
-          rows.shift();
-          rows.forEach(row => {
-            let columns = row.split(",");
+    // this.http.get('assets/final_demographics_data.csv', {responseType: 'text'})
+    //   .subscribe({
+    //     next: data => {
+    //       let rows = data.split("\n");
+    //       rows.shift();
+    //       rows.forEach(row => {
+    //         let columns = row.split(",");
+    //
+    //         this.data.push(new Data(columns[0], parseFloat(columns[58])))
+    //       });
+    //     },
+    //     error: error => console.log(error)
+    //   });
 
-            this.data.push(new Data(columns[0], parseFloat(columns[58])))
-          });
-        },
-        error: error => console.log(error)
-      });
-
-    console.log(this.data);
   }
 
   svg2: any;
 
   ngOnInit(): void {
     this.createSvg();
-    this.drawBars(this.data);
+    this.drawBars();
 
-    this.createBarChart();
+    // this.createBarChart();
   }
 }
 
