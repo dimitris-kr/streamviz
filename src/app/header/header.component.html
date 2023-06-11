@@ -7,21 +7,29 @@
         </a>
       </div>
     </div>
-    <div class="d-flex flex-row flex-wrap justify-content-end p-2 col-3 col-md-9">
-      <nav class="navbar navbar-expand-md">
+    <div class="d-flex flex-row flex-wrap justify-content-end p-2 col-3 col-md-9 position-relative">
+      <!--<button class="navbar-toggler" type="button"><span
+        class="navbar-toggler-icon"></span></button>-->
+
+      <nav class="navbar navbar-expand-md navbar-collapsable">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+                (click)="menuCollapsed = !menuCollapsed">
+          <span *ngIf="menuCollapsed" class="navbar-toggler-icon"></span>
+          <span *ngIf="!menuCollapsed" class="btn-close">&times;</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div [ngbCollapse]="menuCollapsed" class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-            <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-            <a class="nav-link" routerLink="/visualization" routerLinkActive="active">Visualization</a>
-            <a class="nav-link" routerLink="/credits" routerLinkActive="active">Credits</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+               (click)="menuCollapsed = true">Home</a>
+            <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="menuCollapsed = true">About</a>
+            <a class="nav-link" routerLink="/visualization" routerLinkActive="active" (click)="menuCollapsed = true">Visualization</a>
+            <a class="nav-link" routerLink="/credits" routerLinkActive="active"
+               (click)="menuCollapsed = true">Credits</a>
           </div>
         </div>
       </nav>
+
     </div>
   </div>
 </header>
