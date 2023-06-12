@@ -1,0 +1,54 @@
+.tableau-desktop {
+  perspective: 1000px;
+}
+
+.tableau-desktop img {
+  transform: rotateY(20deg);
+}
+
+.yt-embed iframe {
+  aspect-ratio: 1.778;
+}
+
+.yt-embed {
+  border-radius: 30px;
+  overflow: hidden;
+  border: 0.2rem solid var(--lavenderWeb);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.prof-pic img {
+  width: 100%;
+  max-width: 160px;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 0.2rem solid var(--lavenderWeb);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.divider {
+  height: 0.05rem;
+  background-color: var(--slateBlue);
+}
+
+.table {
+  width: 100%;
+}
+
+.table .td {
+  width: 75%;
+}
+
+.table th {
+  width: 25%;
+}
+
+.table td a {
+  margin: 0.5rem 0;
+  display: inline-block;
+}
+
+.team{
+  background-color: var(--frenchGray);
+}

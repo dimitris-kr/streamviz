@@ -63,8 +63,21 @@ h3{
 }
 
 h4{
-  font-size: 18px;
+  font-size: 22px;
 }
+
+/* LINKS */
+a{
+  color: var(--slateBlue);
+  text-decoration: none !important;
+  transition: 0.4s ease;
+  font-weight: 500;
+}
+
+a:hover{
+  color: var(--tropicalIndigo);
+}
+
 
 /* NAV */
 
@@ -108,4 +121,55 @@ h4{
 .btn-primary:hover {
   background-color: var(--tropicalIndigo);
   border-color: var(--tropicalIndigo);
+}
+
+/* SUBHEADER */
+
+.subheader{
+  background-image: url("assets/banner-2.jpg");
+  background-position: 35% 100%;
+  background-size: cover;
+  color: var(--lavenderWeb);
+  background-attachment: fixed;
+}
+
+.subheader > div {
+  background-color: rgb(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.subheader .breadcrumb-item,
+.subheader .breadcrumb-item a,
+.subheader .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--frenchGray);
+  text-decoration: none;
+}
+
+.subheader .breadcrumb-item a:hover{
+  color: var(--lavenderWeb);
+}
+
+.subheader .breadcrumb-item a{
+  font-weight: 600;
+}
+
+/* TABLES */
+
+.table {
+  --bs-table-bg-state: var(--lavenderWeb);
+  --bs-table-border-color: rgb(0,0,0,0.25);
+  --bs-table-hover-bg: var(--frenchGray);
+}
+
+.table th,
+.table td {
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+.table tr:last-child {
+  border-color: var(--lavenderWeb);
 }
