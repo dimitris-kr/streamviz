@@ -12,7 +12,7 @@ export class HomeComponent {
   banners = [1, 2, 3, 4].map((n) => "assets/banner-" + n + ".jpg");
 
   constructor(config: NgbCarouselConfig) {
-    config.showNavigationArrows = true;
+    config.showNavigationArrows = false;
     config.showNavigationIndicators = false;
     config.pauseOnHover = false;
   }
