@@ -85,6 +85,7 @@ a:hover{
   text-align: center;
   position: relative;
   margin: 0 0.2rem;
+  font-size: 1.1rem;
 }
 
 .nav-link:hover,
@@ -97,18 +98,25 @@ a:hover{
   width: 100%;
   display: block;
   position: absolute;
-  height: 1.1px;
+  height: 0.12rem;
   bottom: 0;
   left: 0;
   background-color: var(--slateBlue);
   transform-origin: right bottom;
   transform: scale(0);
   transition: 0.3s ease;
+  border-radius: 1rem;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after{
   transform: scale(1);
+}
+
+
+.navbar-expand-md .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 /* BUTTONS */
@@ -173,3 +181,4 @@ a:hover{
 .table tr:last-child {
   border-color: var(--lavenderWeb);
 }
+

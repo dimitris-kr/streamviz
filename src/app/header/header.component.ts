@@ -11,6 +11,8 @@ export class HeaderComponent {
 
   private screenWidth: any;
 
+  yPosition = 0;
+
   ngOnInit() {
     this.screenWidth = window.innerWidth;
     this.menuCollapsed = this.screenWidth < 768;
@@ -20,5 +22,14 @@ export class HeaderComponent {
   onWindowResize() {
     this.screenWidth = window.innerWidth;
     this.menuCollapsed = this.screenWidth < 768;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    if (window.scrollY === 0){
+      this.yPosition = 0;
+    } else {
+      this.yPosition = 1;
+    }
   }
 }
