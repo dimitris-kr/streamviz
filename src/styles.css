@@ -3,7 +3,7 @@
 
 /* IMPORT GOOGLE FONTS */
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
 
 /***********/
 
@@ -19,7 +19,7 @@
   --spaceCadet: #141B41;
 
   /* Fonts */
-  --fancy: 'Playfair Display', serif;
+  --fancy: 'Montserrat', sans-serif;
   --simple: 'Quicksand', sans-serif;
 
   /* Site Width */
@@ -30,6 +30,12 @@
 /***********/
 
 /* BASICS */
+
+::-moz-selection,
+::selection {
+  color: var(--eerieBlack);
+  background: #ABA4F1;
+}
 
 body {
   background-color: var(--lavenderWeb);
@@ -66,6 +72,11 @@ h4{
   font-size: 22px;
 }
 
+.divider {
+  height: 0.05rem;
+  background-color: var(--slateBlue);
+}
+
 /* LINKS */
 a{
   color: var(--slateBlue);
@@ -98,7 +109,7 @@ a:hover{
   width: 100%;
   display: block;
   position: absolute;
-  height: 0.12rem;
+  height: 0.2rem;
   bottom: 0;
   left: 0;
   background-color: var(--slateBlue);
@@ -115,8 +126,7 @@ a:hover{
 
 
 .navbar-expand-md .navbar-nav .nav-link {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 1rem 1.2rem;
 }
 
 /* BUTTONS */
@@ -145,8 +155,8 @@ a:hover{
   background-color: rgb(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
 }
 
 .subheader .breadcrumb-item,

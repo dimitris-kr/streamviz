@@ -27,11 +27,6 @@
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
 }
 
-.divider {
-  height: 0.05rem;
-  background-color: var(--slateBlue);
-}
-
 .table {
   width: 100%;
 }
@@ -51,4 +46,9 @@
 
 .team{
   background-color: var(--frenchGray);
+}
+
+.db{
+  border-radius: 1.6rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
 }

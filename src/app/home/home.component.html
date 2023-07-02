@@ -23,11 +23,84 @@
     <h2>The Idea</h2>
     <p>
       The streaming era has revolutionized the way people access movies, series etc. as well as the way the
-      entertainment business works. This project proposes a data visualization concerning the content, revenue,
+      entertainment business works. This project offers data visualizations concerning the content, revenue,
       and subscribers of various streaming platforms, to acquire knowledge regarding the differences in what
-      they offer, possible trends, and what the users gravitate towards.
+      they offer, possible trends, and their growth over time.
     </p>
   </div>
+
+  <div class="container-xxl px-2 py-0 text-center">
+    <h5 class="mb-2">Streaming Platforms Included in the Project</h5>
+    <div class="d-flex flex-row justify-content-center align-items-center">
+      <div *ngFor="let i of [0,1,2,3,4]" class="platform-icon">
+        <img [src]="platform_icons[i]" [alt]="platform_icons[i] + '_icon'" class="img-fluid py-2 px-1"
+             placement="bottom"
+             [ngbTooltip]="platforms[i]"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-xxl px-2 py-5 text-center">
+    <h2>Visualizations</h2>
+    <div class="row px-3">
+      <div class="col-md-4 d-flex flex-column justify-content-start align-items-center p-4">
+        <a routerLink="/platform-statistics" class="teaser">
+          <h4>Streaming Platforms Statistical Analysis</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4 d-flex flex-column justify-content-start align-items-center p-4">
+
+    </div>
+
+    <div class="col-md-4 d-flex flex-column justify-content-start align-items-center p-4">
+
+    </div>
+  </div>
+
+  <!--<div class="container-xxl px-4 py-5 text-center">
+    <div class="row">
+      <div class="col-md-4 d-flex flex-column justify-content-start align-items-center p-4">
+        <h4>Motivation</h4>
+        <div class="divider w-50 mt-2 mb-3 d-block"></div>
+        <p>
+          Streaming platforms are becoming increasingly popular nowadays. People are able to choose from an abundant
+          catalogue of movies and series and watch whenever and wherever they desire. Therefore, due to this great
+          convenience and a low cost, streaming is becoming the standard way of consuming media. That's why we chose to
+          analyse this phenomenon through data visualization.
+        </p>
+      </div>
+
+      <div class="col-md-4 d-flex flex-column justify-content-start align-items-center p-4">
+        <h4>Objective & Goals</h4>
+        <div class="divider w-50 mt-2 mb-3 d-block"></div>
+        <p>
+          We attempted to find tensions, about the possible relation between movie characteristics, for instance we
+          tried to show if the year that a movie was produced affects the rating of that movie, or if the genre of the
+          movie affects the review of the movie. We chose to look for such tensions, as searching for relations between
+          variables, is a standard practice in data science. Except for this, it is useful also for the people working
+          for the streaming platforms to know if the majority of people prefer a movie with a specific characteristic.
+          Another goal that we want to achieve with this project, is to inform the audience about which platform is
+          better, which is something that misses from the existing datasets, as till now there is only the information
+          concerning the revenues and the subscribers of the platforms.
+        </p>
+      </div>
+
+      <div class="col-md-4 d-flex flex-column justify-content-start align-items-center p-4">
+        <h4>Data Processing </h4>
+        <div class="divider w-50 mt-2 mb-3 d-block"></div>
+        <p>A difficulty that we faced during the processing of the streaming platforms datasets, was that in these
+          datasets there was no recent data and the datasets had only information about streaming platforms’ revenues
+          and subscribers until 2020. So, we overcame this difficulty by searching in Google and by typing manually the
+          numbers we saw, in a new dataset in an Excel file. For the datasets including information about the Streaming
+          Services (revenues and subscribers), we calculated the sum of the revenues and subscribers of each platform,
+          in order to find which one outperforms the others. For the datasets which are related to the ratings and other
+          characteristics of movies and TV-shows, we compared the ratings among the movies and we tried to find
+          relations between movie attributes, for example between the genre and the review of the movie. </p>
+      </div>
+    </div>
+  </div>-->
 
   <!--<div class="container-fluid px-2 py-5 text-center">
     <h2>Tableau TEST</h2>

@@ -1,5 +1,7 @@
 #not-found{
-  min-height: 54vh;
+  min-height: 100vh;
+  background-color: #222227;
+  color: var(--lavenderWeb);
 }
 
 #not-found .num{
