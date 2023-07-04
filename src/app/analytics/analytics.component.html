@@ -1,0 +1,23 @@
+<div class="container-fluid p-0 subheader">
+  <div
+    class="container-fluid d-flex flex-column justify-content-center align-items-center text-center px-2">
+    <h1>Statistical Analysis on Streaming Platforms</h1>
+    <nav style="--bs-breadcrumb-divider: '›';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Analytics</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="container-fluid py-4">
+  <div class="dashboard-movies">
+    <app-tableau-viz
+      dashboardIndex="viz1"
+      vizUrl="https://public.tableau.com/views/stremviz-analytics/StreamingPlatformStatisticalAnalysis?:language=en-US&:display_count=n&:origin=viz_share_link"
+      fixedH="2400">
+    </app-tableau-viz>
+  </div>
+
+</div>

@@ -11,17 +11,24 @@ export class TableauVizComponent {
   @Input() dashboardIndex = "0";
   @Input() toolbar = 'hidden';
   @Input() vizUrl = '';
-
+  @Input() fixedH = "1500";
   // Dashboard properties
   public VizIndex = 'Tableau-Viz-' + this.dashboardIndex;
 
   // Handle dashboard resizing
   public getScreenWidth: any;
-  public getScreenHeight: any;
+  public getScreenHeight : any;
   private calculateDashboardSize = () => {
     const bufferSize = 25;
     this.getScreenWidth = window.innerWidth-bufferSize;
-    this.getScreenHeight = (window.innerWidth-bufferSize)*3/4;
+    this.getScreenHeight = parseInt(this.fixedH);
+    let maxWidth = 1100;
+    if(window.innerWidth < 767){
+      this.getScreenHeight = parseInt(this.fixedH) * 2;
+    }
+    if(window.innerWidth > maxWidth){
+      this.getScreenWidth = maxWidth;
+    }
   }
   @HostListener('window:resize', ['$event'])
   onWindowResize() {

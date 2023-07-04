@@ -1,0 +1,26 @@
+<div class="container-fluid p-0 subheader">
+  <div
+    class="container-fluid d-flex flex-column justify-content-center align-items-center text-center px-2">
+    <h1>Series on Streaming Platforms</h1>
+    <nav style="--bs-breadcrumb-divider: '›';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Series</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="container-xxl px-2 py-5 text-center">
+  <nav class="navbar">
+    <div class="navbar-nav secondary">
+      <a class="nav-link" routerLink="/series" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">General</a>
+      <a class="nav-link" routerLink="/series/top100" routerLinkActive="active">Top 100</a>
+    </div>
+  </nav>
+
+</div>
+
+<div class="container-fluid py-2">
+  <router-outlet></router-outlet>
+</div>

@@ -22,10 +22,11 @@
           <div class="navbar-nav">
             <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
                (click)="menuCollapsed = true">Home</a>
+            <a class="nav-link" routerLink="/analytics" routerLinkActive="active" (click)="menuCollapsed = true">Analytics</a>
+            <a class="nav-link" routerLink="/movies" routerLinkActive="active" (click)="menuCollapsed = true">Movies</a>
+            <a class="nav-link" routerLink="/series" routerLinkActive="active" (click)="menuCollapsed = true">Series</a>
             <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="menuCollapsed = true">About</a>
-            <a class="nav-link" routerLink="/visualization" routerLinkActive="active" (click)="menuCollapsed = true">Visualization</a>
-            <a class="nav-link" routerLink="/credits" routerLinkActive="active"
-               (click)="menuCollapsed = true">Credits</a>
+
           </div>
         </div>
       </nav>

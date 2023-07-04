@@ -13,6 +13,13 @@ import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TableauVizComponent } from './tableau-viz/tableau-viz.component';
 import { D3BarComponent } from './d3-bar/d3-bar.component';
+import { MoviesComponent } from './movies/movies.component';
+import { GeneralComponent } from './movies/general/general.component';
+import { Top100Component } from './movies/top100/top100.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { SeriesComponent } from './series/series.component';
+import { GeneralSeriesComponent } from './series/general-series/general-series.component';
+import { Top100SeriesComponent } from './series/top100-series/top100-series.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,14 @@ import { D3BarComponent } from './d3-bar/d3-bar.component';
     AboutComponent,
     NotFoundComponent,
     TableauVizComponent,
-    D3BarComponent
+    D3BarComponent,
+    MoviesComponent,
+    GeneralComponent,
+    Top100Component,
+    AnalyticsComponent,
+    SeriesComponent,
+    GeneralSeriesComponent,
+    Top100SeriesComponent
   ],
   imports: [
     BrowserModule,
