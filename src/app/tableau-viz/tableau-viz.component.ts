@@ -22,7 +22,7 @@ export class TableauVizComponent {
     const bufferSize = 25;
     this.getScreenWidth = window.innerWidth-bufferSize;
     this.getScreenHeight = parseInt(this.fixedH);
-    let maxWidth = 1100;
+    let maxWidth = 1150;
     if(window.innerWidth < 767){
       this.getScreenHeight = parseInt(this.fixedH) * 2;
     }
