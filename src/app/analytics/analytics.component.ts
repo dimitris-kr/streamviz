@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-analytics',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AnalyticsComponent {
 
+  constructor(private scroller: ViewportScroller) {}
+
+  goTo(anchor:string){
+    this.scroller.scrollToAnchor(anchor);
+  }
 }

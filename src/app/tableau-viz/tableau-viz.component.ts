@@ -12,6 +12,8 @@ export class TableauVizComponent {
   @Input() toolbar = 'hidden';
   @Input() vizUrl = '';
   @Input() fixedH = "1500";
+  @Input() fixedHMob = "1500";
+  @Input() maxW = "1150";
   // Dashboard properties
   public VizIndex = 'Tableau-Viz-' + this.dashboardIndex;
 
@@ -19,20 +21,25 @@ export class TableauVizComponent {
   public getScreenWidth: any;
   public getScreenHeight : any;
   private calculateDashboardSize = () => {
-    const bufferSize = 25;
-    this.getScreenWidth = window.innerWidth-bufferSize;
-    this.getScreenHeight = parseInt(this.fixedH);
-    let maxWidth = 1150;
-    if(window.innerWidth < 767){
-      this.getScreenHeight = parseInt(this.fixedH) * 2;
-    }
-    if(window.innerWidth > maxWidth){
+    const bufferSize = 27;
+    // this.getScreenWidth = window.innerWidth;
+
+
+    let maxWidth = parseInt(this.maxW)
+    if(window.innerWidth < maxWidth) {
+      this.getScreenWidth = 380;
+      this.getScreenHeight = parseInt(this.fixedHMob)+bufferSize;
+    } else {
       this.getScreenWidth = maxWidth;
+      this.getScreenHeight = parseInt(this.fixedH)+bufferSize;
     }
   }
+
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
-    this.calculateDashboardSize();
+    if (window.innerWidth < parseInt(this.maxW) + 200 && window.innerWidth > parseInt(this.maxW) - 200) {
+      this.calculateDashboardSize();
+    }
   }
 
   ngOnInit(): void {

@@ -78,14 +78,16 @@ h4{
 }
 
 /* LINKS */
-a{
+a,
+.btn-link{
   color: var(--slateBlue);
   text-decoration: none !important;
   transition: 0.4s ease;
   font-weight: 500;
 }
 
-a:hover{
+a:hover,
+btn-link:hover{
   color: var(--tropicalIndigo);
 }
 
