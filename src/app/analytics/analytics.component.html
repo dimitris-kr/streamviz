@@ -12,10 +12,17 @@
 </div>
 
 <div class="container-xxl d-flex justify-content-end align-items-center py-2">
-  <button (click)="goTo('comm')" class="m-2 btn btn-link">Comments</button>
+  <button (click)="goTo('comm')" class="m-2 btn btn-link btn-icon viz-top-btn">Insights <span class="material-symbols-outlined">
+expand_more
+</span>
+  </button>
   <a
     href="https://public.tableau.com/views/stremviz-analytics/StreamingPlatformStatisticalAnalysis?:language=en-US&:display_count=n&:origin=viz_share_link"
-    class="btn btn-primary btn-md rounded-pill m-2" target="_blank">View on Tableau Public</a>
+    class="btn btn-primary btn-sm rounded-pill m-2 btn-icon viz-top-btn" target="_blank">View on Tableau Public <span
+    class="material-symbols-outlined" style="font-size: 1rem">
+open_in_new
+</span>
+  </a>
 </div>
 
 <div class="container-fluid p-0">
@@ -32,7 +39,10 @@
 </div>
 
 <div id="comm" class="container-comm py-5 px-2">
-  <h4>Comments</h4>
-  <p>It's worth noting that Prime Video is part of the Amazon Prime subscription (free delivery of Amazon orders etc.)
-    and therefore the numbers represent the subscribers and revenue of the app as a whole.</p>
-</div>
+  <h4>Insights</h4>
+  <p>In this dashboard we compare the streaming platforms in terms of their analytics: Region Availability, Pricing, Number of Subscribers and Revenue. The user can compare the platforms by clicking on multiple platform icon filters, while holding down the CTRL key. They can also isolate a certain time period for the two line charts.</p>
+  <div *ngFor="let insight of insights"  class="icon-list-item">
+    <div><span class="material-symbols-outlined">chevron_right</span></div>
+    <p>{{insight}}</p>
+  </div>
+  </div>

@@ -58,3 +58,7 @@
   max-width: 300px;
   width: 100%;
 }
+
+.icon-box .icon{
+  font-size: 4.5rem;
+}

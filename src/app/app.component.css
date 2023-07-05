@@ -1,3 +1,38 @@
-.content{
+.content {
   min-height: 100vh;
+}
+
+#to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  transition: 0.4s opacity ease 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-image: linear-gradient(140deg, #9285e6, #5042a7);
+  color: white;
+  background-color: #0f09313d;
+  background-blend-mode: overlay;
+  border: none;
+  outline: none;
+  width: 2.8rem;
+}
+
+#to-top:hover {
+  transform: scale(1.02);
+  background-color: var(--tropicalIndigo);
+  color: var(--lavenderWeb);
+}
+
+
+#to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+#to-top.hide {
+  visibility: hidden;
+  opacity: 0;
 }

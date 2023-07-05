@@ -1,7 +1,32 @@
-<div class="dashboard-movies">
+<div class="container-xxl d-flex justify-content-end align-items-center py-2">
+  <button (click)="goTo('comm')" class="m-2 btn btn-link btn-icon viz-top-btn">Insights <span class="material-symbols-outlined">
+expand_more
+</span>
+  </button>
+  <a
+    href="https://public.tableau.com/views/streamviz-top100-movies/Top100MoviesbyIMDBScore?:language=en-US&:display_count=n&:origin=viz_share_link"
+    class="btn btn-primary btn-sm rounded-pill m-2 btn-icon viz-top-btn" target="_blank">View on Tableau Public <span
+    class="material-symbols-outlined" style="font-size: 1rem">
+open_in_new
+</span>
+  </a>
+</div>
+
+<div class="container-fluid p-0">
   <app-tableau-viz
     dashboardIndex="viz1"
     vizUrl="https://public.tableau.com/views/streamviz-top100-movies/Top100MoviesbyIMDBScore?:language=en-US&:display_count=n&:origin=viz_share_link"
-    fixedH="10500">
+    fixedH="8100"
+    maxW="1000"
+    fixedHMob="8200">
   </app-tableau-viz>
+</div>
+
+<div id="comm" class="container-comm py-5 px-2">
+  <h4>Insights</h4>
+  <p>This dashboard showcases the top 100 movies based on IMDB score, along with the streaming platform(s) that each one is available on. In addition, the user is able to search for any movie even if it did not make the top 100 and determine where it is available. This is qualitative way of comparing the content of each platform.
+  <div *ngFor="let insight of insights"  class="icon-list-item">
+    <div><span class="material-symbols-outlined">chevron_right</span></div>
+    <p>{{insight}}</p>
+  </div>
 </div>

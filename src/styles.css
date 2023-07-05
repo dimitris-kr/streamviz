@@ -4,6 +4,7 @@
 /* IMPORT GOOGLE FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 /***********/
 
@@ -52,20 +53,23 @@ body {
 
 h1, h2, h3{
   font-family: var(--fancy);
-  font-weight: 600;
+
   margin: 0 0 20px;
 }
 
 h1{
   font-size: 48px;
+  font-weight: 600;
 }
 
 h2{
   font-size: 38px;
+  font-weight: 600;
 }
 
 h3{
   font-size: 28px;
+  font-weight: 400;
 }
 
 h4{
@@ -84,13 +88,35 @@ a,
   text-decoration: none !important;
   transition: 0.4s ease;
   font-weight: 500;
+
 }
 
 a:hover,
-btn-link:hover{
+.btn-link:hover{
   color: var(--tropicalIndigo);
 }
 
+ .material-symbols-outlined {
+   font-variation-settings:
+     'FILL' 0,
+     'wght' 400,
+     'GRAD' 0,
+     'opsz' 48
+ }
+
+ .btn-icon{
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   padding-left: 0.8rem;
+   padding-right: 0.8rem;
+ }
+
+@media only screen and (max-width: 767px) {
+  .viz-top-btn{
+    font-size: 0.85rem;
+  }
+}
 
 /* NAV */
 
@@ -194,3 +220,18 @@ btn-link:hover{
   border-color: var(--lavenderWeb);
 }
 
+/* ICON LIST */
+
+.icon-list-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 1.5rem;
+}
+.icon-list-item div{
+  width: 2rem;
+}
+
+.icon-list-item p{
+  width: calc(100% - 3.5rem);
+}

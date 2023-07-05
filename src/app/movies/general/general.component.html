@@ -1,9 +1,33 @@
-<div class="dashboard-movies">
+<div class="container-xxl d-flex justify-content-end align-items-center py-2">
+  <button (click)="goTo('comm')" class="m-2 btn btn-link btn-icon viz-top-btn">Insights <span class="material-symbols-outlined">
+expand_more
+</span>
+  </button>
+  <a
+    href="https://public.tableau.com/views/streamviz-movies/MoviesOnStreamingPlatforms?:language=en-US&:display_count=n&:origin=viz_share_link"
+    class="btn btn-primary btn-sm rounded-pill m-2 btn-icon viz-top-btn" target="_blank">View on Tableau Public <span
+    class="material-symbols-outlined" style="font-size: 1rem">
+open_in_new
+</span>
+  </a>
+</div>
+
+<div class="container-fluid p-0">
   <app-tableau-viz
     dashboardIndex="viz1"
     vizUrl="https://public.tableau.com/views/streamviz-movies/MoviesOnStreamingPlatforms?:language=en-US&:display_count=n&:origin=viz_share_link"
     fixedH="2800"
-  maxW="1100"
-  fixedHMob="3000">
+    maxW="1100"
+    fixedHMob="3000">
   </app-tableau-viz>
+</div>
+
+<div id="comm" class="container-comm py-5 px-2">
+  <h4>Insights</h4>
+  <p>In this dashboard we compare the streaming platforms with one another. The user can compare multiple platforms by clicking on multiple platform icon filters, while holding down the CTRL key. Another goal is to find possible relations between features of the movies. More specifically, we attempted to find correlation between the movies’ rating and the release year and between the rating and the genre.</p>
+  <div *ngFor="let insight of insights"  class="icon-list-item">
+    <div><span class="material-symbols-outlined">chevron_right</span></div>
+    <p>{{insight}}</p>
+  </div>
+  <p>One other basic functionality of this page, is that the user can select the genre of the movie that they would like to watch and then instantly the graph with the genres of the movies, would recommend which streaming platform to use for this specific movie category, based on the average rating.</p>
 </div>
